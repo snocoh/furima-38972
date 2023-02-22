@@ -4,6 +4,8 @@
 
 | Column                | Type    | Options                   |
 | --------------------- | ------- | ------------------------- |
+| nickname              | string  | null: false               |
+| email                 | string  | null: false, unique: true |
 | encrypted_password    | string  | null: false               |
 | family_name           | string  | null: false               |
 | first_name            | string  | null: false               |
@@ -27,9 +29,9 @@
 | condition_id     | integer    | null: false                    |
 | postage_id       | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
-| delivery_days_id | integer    | null: false                    |
+| delivery_day_id  | integer    | null: false                    |
 | price            | integer    | null: false                    |
-| user             | references | null: false, foreign_key: true |
+| user_id          | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -39,10 +41,10 @@
 
 ## orders テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user_id   | references | null: false, foreign_key: true |
+| item_id   | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -61,7 +63,7 @@
 | street       | string     | null:false                     |
 | building     | string     |                                |
 | phone_number | string     | null: false                    |
-| order        | references | null: false, foreign_key: true |
+| order_id     | references | null: false, foreign_key: true |
 
 ### Association
 

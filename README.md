@@ -9,9 +9,7 @@
 | first_name            | string  | null: false               |
 | kana_family_name      | string  | null: false               |
 | kana_first_name       | string  | null: false               |
-| birthday_year         | integer | null: false               |
-| birthday_month        | integer | null: false               |
-| birthday_date         | integer | null: false               |
+| birthday              | date    | null: false               |
 
 ### Association
 

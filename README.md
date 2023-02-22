@@ -6,7 +6,7 @@
 | --------------------- | ------- | ------------------------- |
 | nickname              | string  | null: false               |
 | email                 | string  | null: false, unique: true |
-| password              | string  | null: false               |
+| encrypted_password    | string  | null: false               |
 | password_confirmation | string  | null: false               |
 | family_name           | string  | null: false               |
 | first_name            | string  | null: false               |
@@ -39,7 +39,7 @@
 ### Association
 
 - belongs_to :user
-- hus_one    :order
+- has_one    :order
 
 
 ## orders テーブル

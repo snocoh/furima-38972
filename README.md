@@ -26,7 +26,7 @@
 | category_id      | integer    | null: false                    |
 | condition_id     | integer    | null: false                    |
 | postage_id       | integer    | null: false                    |
-| place_id         | integer    | null: false                    |
+| prefecture_id    | integer    | null: false                    |
 | delivery_days_id | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
@@ -56,11 +56,11 @@
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | postcode     | string     | null:false                     |
-| prefecture   | string     | null: false                    |
+| prefecture_id| integer    | null: false                    |
 | city         | string     | null: false                    |
 | street       | string     | null:false                     |
 | building     | string     |                                |
-| phone_number | integer    | null: false                    |
+| phone_number | string     | null: false                    |
 | order        | references | null: false, foreign_key: true |
 
 ### Association

@@ -59,9 +59,23 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('Password is too long (maximum is 128 characters)')
       end
 
-      it 'passwordは半角英数字が含まれていなければ登録できない' do
-        @user.password = 'ABCDEF'
-        @user.password_confirmation = 'ABCDEF'
+      it 'passwordは英字のみでは登録できない' do
+        @user.password = 'ABCabc'
+        @user.password_confirmation = 'ABCabc'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
+
+      it 'passwordは数字のみでは登録できない' do
+        @user.password = '123456'
+        @user.password_confirmation = '123456'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
+
+      it 'passwordは全角文字を含む場合は登録できない' do
+        @user.password = 'Abc1２３'
+        @user.password_confirmation = 'Abc1２３'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end

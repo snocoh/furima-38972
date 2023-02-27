@@ -250,9 +250,14 @@ a {
   background-color: #FFF;
 }
 
+.list {
+  display: flex;
+  justify-content: center;
+}
 
 .item-img-content {
   position: relative;
+  margin-right: 30px;
 }
 
 .item-img {
@@ -280,6 +285,7 @@ a {
   background-color: #FFF;
   color: black;
   padding: 1vw;
+  margin-right: 30px;
 }
 
 .item-name {
